@@ -1,0 +1,21 @@
+<!-- Update a blog post form -->
+
+<h1>Update Blog Post <%= originalTitle%></h1>
+<form action="/updatePost" method="POST">
+  <input type="hidden" name="originalTitle" id="originalTitle" value="<%= originalTitle %>">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" name="title" value="<%= post.title%>" required>
+  </div>
+  <div class="mb-3">
+    <label for="content" class="form-label">Content</label>
+    <textarea class="form-control" id="content" name="content" rows="6" required><%= post.content %></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="image" class="form-label">Image URL</label>
+    <input type="url" class="form-control" id="image" name="image" value="<%= post.image%>">
+  </div>
+  <button type="submit" class="btn btn-primary">Update Post</button>
+</form>
+
+

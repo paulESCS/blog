@@ -1,0 +1,26 @@
+<!-- Include the Header -->
+<%- include("partials/header.ejs") %>
+
+<main class="container">
+  
+<% if (locals.location) { %>
+  <% if (location === 'Home') { %>
+    <h1>Welcome to the Home Page</h1>
+    <%- include("partials/home.ejs") %>
+  <% } else if (location === 'Create') { %>
+    <%- include("partials/create.ejs") %>
+  <% } else if (location === 'View') { %>
+    <div class="row">
+      <%- include("partials/blogs.ejs") %>
+      <%- include("partials/content.ejs") %>
+    </div>
+  <% } else if (location === 'Update') { %>
+    <%- include("partials/update.ejs") %>
+  <% } else {} %>
+<% } else { %>
+  <h1>Looks like you are new here!</h1>
+<% } %>
+</main>
+
+<!-- Include the Footer -->
+<%- include("partials/footer.ejs") %>
